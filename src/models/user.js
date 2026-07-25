@@ -77,13 +77,14 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 userSchema.methods.getJWT = async function () {
   const user = this;
+  const secret = process.env.JWT_SECRET || "DEV@Tinder$790";
 
-  const token = await jwt.sign({ _id: user._id }, "DEV@Tinder$790", {
+  const token = await jwt.sign({ _id: user._id }, secret, {
     expiresIn: "7d",
   });
 
@@ -96,7 +97,7 @@ userSchema.methods.validatePassword = async function (passwordInputByUser) {
 
   const isPasswordValid = await bcrypt.compare(
     passwordInputByUser,
-    passwordHash
+    passwordHash,
   );
 
   return isPasswordValid;
