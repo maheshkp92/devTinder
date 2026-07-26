@@ -1,7 +1,7 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const User = require('./models/user');
+require("dotenv").config();
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const User = require("./models/user");
 
 const connectDB = async () => {
   await mongoose.connect(process.env.DB_CONNECTION_SECRET);
@@ -12,48 +12,89 @@ const seedUsers = async () => {
 
   const users = [
     {
-      firstName: 'Aarav',
-      lastName: 'Sharma',
-      emailId: 'aarav@example.com',
-      password: 'Aa@12345',
+      firstName: "Aarav",
+      lastName: "Sharma",
+      emailId: "aarav@example.com",
+      password: "Aa@12345",
       age: 27,
-      gender: 'male',
-      about: 'Full-stack developer who loves React and Node.js.',
-      skills: ['JavaScript', 'React', 'Node.js'],
-      photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+      gender: "male",
+      about: "Full-stack developer who loves React and Node.js.",
+      skills: ["JavaScript", "React", "Node.js"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
     },
     {
-      firstName: 'Meera',
-      lastName: 'Patel',
-      emailId: 'meera@example.com',
-      password: 'Mm@12345',
+      firstName: "Meera",
+      lastName: "Patel",
+      emailId: "meera@example.com",
+      password: "Mm@12345",
       age: 24,
-      gender: 'female',
-      about: 'UI engineer focused on design systems and accessibility.',
-      skills: ['TypeScript', 'UI/UX', 'CSS'],
-      photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80',
+      gender: "female",
+      about: "UI engineer focused on design systems and accessibility.",
+      skills: ["TypeScript", "UI/UX", "CSS"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
     },
     {
-      firstName: 'Rahul',
-      lastName: 'Verma',
-      emailId: 'rahul@example.com',
-      password: 'Rr@12345',
+      firstName: "Rahul",
+      lastName: "Verma",
+      emailId: "rahul@example.com",
+      password: "Rr@12345",
       age: 29,
-      gender: 'male',
-      about: 'Backend engineer building scalable APIs and microservices.',
-      skills: ['Node.js', 'MongoDB', 'AWS'],
-      photoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80',
+      gender: "male",
+      about: "Backend engineer building scalable APIs and microservices.",
+      skills: ["Node.js", "MongoDB", "AWS"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
     },
     {
-      firstName: 'Priya',
-      lastName: 'Nair',
-      emailId: 'priya@example.com',
-      password: 'Pp@12345',
+      firstName: "Priya",
+      lastName: "Nair",
+      emailId: "priya@example.com",
+      password: "Pp@12345",
       age: 26,
-      gender: 'female',
-      about: 'Product-minded developer who enjoys Python and data tools.',
-      skills: ['Python', 'SQL', 'Data Science'],
-      photoUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80',
+      gender: "female",
+      about: "Product-minded developer who enjoys Python and data tools.",
+      skills: ["Python", "SQL", "Data Science"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+    },
+    {
+      firstName: "Ankit",
+      lastName: "Gupta",
+      emailId: "ankit@example.com",
+      password: "An@12345",
+      age: 31,
+      gender: "male",
+      about: "Mobile engineer who enjoys Flutter and performance tuning.",
+      skills: ["Flutter", "Dart", "Android"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+    },
+    {
+      firstName: "Divya",
+      lastName: "Joshi",
+      emailId: "divya@example.com",
+      password: "Dj@12345",
+      age: 25,
+      gender: "female",
+      about: "Frontend engineer who loves animations and design systems.",
+      skills: ["React", "CSS", "JavaScript"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+    },
+    {
+      firstName: "Rohan",
+      lastName: "Kumar",
+      emailId: "rohan@example.com",
+      password: "Rk@12345",
+      age: 28,
+      gender: "male",
+      about:
+        "DevOps enthusiast who enjoys cloud infrastructure and automation.",
+      skills: ["Docker", "Kubernetes", "AWS"],
+      photoUrl:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
     },
   ];
 
@@ -65,7 +106,7 @@ const seedUsers = async () => {
     }
   }
 
-  console.log('Seeded sample users successfully');
+  console.log("Seeded sample users successfully");
   await mongoose.disconnect();
 };
 
